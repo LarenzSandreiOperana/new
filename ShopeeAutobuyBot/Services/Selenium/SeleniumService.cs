@@ -248,7 +248,7 @@ namespace Shopee_Autobuy_Bot
 
         public void SaveCookie()
         {
-            _driver.Navigate().GoToUrl("https://shopee.com.my/");
+            _driver.Navigate().GoToUrl("https://shopee.ph/");
 
             // Get all cookies from the current tab
             var cookies = _driver.Manage().Cookies.AllCookies;
@@ -263,7 +263,7 @@ namespace Shopee_Autobuy_Bot
         public void LoadCookie()
         {
             // Navigate to a webpage (you can navigate to any page)
-            _driver.Navigate().GoToUrl("https://shopee.com.my/");
+            _driver.Navigate().GoToUrl("https://shopee.ph/");
 
             // Load cookies from a file
             string cookieString = File.ReadAllText("cookies.txt");
@@ -292,7 +292,7 @@ namespace Shopee_Autobuy_Bot
             try
             {
                 // Navigate to a webpage
-                _driver.Navigate().GoToUrl("https://shopee.com.my/");
+                _driver.Navigate().GoToUrl("https://shopee.ph/");
 
                 // Clear all cookies
                 _driver.Manage().Cookies.DeleteAllCookies();
@@ -309,9 +309,9 @@ namespace Shopee_Autobuy_Bot
 
         public bool CheckLogin()
         {
-            _driver.Navigate().GoToUrl("https://shopee.com.my/user/account/profile");
-            var result = WaitUrlContainString("https://shopee.com.my/user/account/profile");
-            if (result.UrlContainString("https://shopee.com.my/buyer/login"))
+            _driver.Navigate().GoToUrl("https://shopee.ph/user/account/profile");
+            var result = WaitUrlContainString("https://shopee.ph/user/account/profile");
+            if (result.UrlContainString("https://shopee.ph/buyer/login"))
                 return false;
             return true;
         }
